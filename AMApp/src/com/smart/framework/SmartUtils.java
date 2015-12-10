@@ -722,6 +722,9 @@ public class SmartUtils implements Constants{
         }
         int code=0;
         try{
+            Log.d("amlog", "Response Status Code : " + response.getString("code"));
+            Log.d("amlog", "Response Body: " + response.toString());
+
             System.out.println("WSResponse : " +response);
 
             if (response.has("code")) {
@@ -740,7 +743,7 @@ public class SmartUtils implements Constants{
                     removeUnnacessaryFields(response);
 
 
-                    if (code == 200 || code == 703) {
+                    if (code >= 200 && code <= 300 || code == 703) {
                         errorMessage=null;
                     } else {
 

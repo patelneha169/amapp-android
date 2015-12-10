@@ -1,5 +1,7 @@
 package com.smart.weservice;
 
+import android.util.Log;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
@@ -25,6 +27,8 @@ public class CustomJsonObjectRequest extends JsonObjectRequest {
 
     public CustomJsonObjectRequest(String url, JSONObject jsonRequest, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
         super(url, jsonRequest, listener, errorListener);
+        Log.d("amlog", "Request URL: " + url);
+        Log.d("amlog", "Request JSON: " + jsonRequest.toString());
     }
 
     @Override
